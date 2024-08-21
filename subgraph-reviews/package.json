@@ -1,0 +1,27 @@
+{
+  "name": "summit24-w14-reviews",
+  "private": true,
+  "description": "The starter code for Summit 2024 workshop Federation from Day One",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js -e graphql,js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@apollo/datasource-rest": "^6.3.0",
+    "@apollo/server": "^4.10.4",
+    "@apollo/subgraph": "^2.8.1",
+    "graphql": "^16.8.2",
+    "graphql-tag": "^2.12.6",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
