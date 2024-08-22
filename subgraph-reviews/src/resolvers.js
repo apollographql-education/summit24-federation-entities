@@ -11,5 +11,8 @@ export const resolvers = {
     overallRating: ({ id }, _, { dataSources }) => {
       return dataSources.reviewsDb.getOverallRatingForListing(id);
     },
+    reviews: ({ id }, _, { dataSources }) => {
+      return dataSources.reviewsDb.getReviewsByListing(id);
+    },
   },
 };

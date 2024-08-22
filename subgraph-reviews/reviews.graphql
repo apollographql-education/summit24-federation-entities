@@ -18,4 +18,5 @@ type Review {
 type Listing @key(fields: "id") {
   id: ID!
   overallRating: Float
+  reviews: [Review!]!
 }
