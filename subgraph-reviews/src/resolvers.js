@@ -15,4 +15,9 @@ export const resolvers = {
       return dataSources.reviewsDb.getReviewsByListing(id);
     },
   },
+  Review: {
+    listing: (review) => {
+      return { id: review.listingId };
+    },
+  },
 };

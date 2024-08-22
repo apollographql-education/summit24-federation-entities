@@ -10,6 +10,9 @@ export const resolvers = {
     },
   },
   Listing: {
+    __resolveReference: (representation, { dataSources }) => {
+      return dataSources.listingAPI.getListing(representation.id);
+    },
     amenities: ({ id, amenities }, _, { dataSources }) => {
       return validateFullAmenities(amenities)
         ? amenities
