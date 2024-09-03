@@ -14,6 +14,12 @@ export const resolvers = {
     reviews: ({ id }, _, { dataSources }) => {
       return dataSources.reviewsDb.getReviewsByListing(id);
     },
+    moneyValueGuaranteed: (listing, _, { dataSources }) => {
+      return dataSources.reviewsDb.calculateMoneyValueGuarantee(
+        listing.costPerNight,
+        listing.id
+      );
+    },
   },
   Review: {
     listing: (review) => {

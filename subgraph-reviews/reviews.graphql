@@ -1,5 +1,8 @@
 extend schema
-  @link(url: "https://specs.apollo.dev/federation/v2.7", import: ["@key"])
+  @link(
+    url: "https://specs.apollo.dev/federation/v2.7"
+    import: ["@key", "@requires", "@external"]
+  )
 
 type Query {
   "A list of the most recent reviews in the database"
@@ -20,4 +23,6 @@ type Listing @key(fields: "id") {
   id: ID!
   overallRating: Float
   reviews: [Review!]!
+  costPerNight: Float @external
+  moneyValueGuaranteed: Boolean @requires(fields: "costPerNight")
 }
