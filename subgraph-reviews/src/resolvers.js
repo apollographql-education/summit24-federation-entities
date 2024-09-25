@@ -6,14 +6,14 @@ export const resolvers = {
   },
   Listing: {
     // Exercise: Contributing to an entity
-    __resolveReference: () => {
-      // Add the Listing reference resolver here
+    __resolveReference: (listing) => {
+      return listing;
     },
     overallRating: ({ id }, __, { dataSources }) => {
-      // Use this function: dataSources.getOverallRatingForListing(listingId)
+      return dataSources.reviewsDb.getOverallRatingForListing(id);
     },
     reviews: ({ id }, __, { dataSources }) => {
-      // Use this function: dataSources.getReviewsByListing(listingId)
+      return dataSources.reviewsDb.getReviewsByListing(id);
     },
     // Exercise: Using requires/external
     moneyValueGuaranteed: (listing, _, { dataSources }) => {
