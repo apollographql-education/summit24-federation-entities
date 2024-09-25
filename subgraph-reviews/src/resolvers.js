@@ -6,28 +6,27 @@ export const resolvers = {
   },
   Listing: {
     // Exercise: Contributing to an entity
-    __resolveReference: () => {
-      // Add the Listing reference resolver here
+    __resolveReference: (listing) => {
+      return listing;
     },
     overallRating: ({ id }, __, { dataSources }) => {
-      // Use this function: dataSources.getOverallRatingForListing(listingId)
+      return dataSources.reviewsDb.getOverallRatingForListing(id);
     },
     reviews: ({ id }, __, { dataSources }) => {
-      // Use this function: dataSources.getReviewsByListing(listingId)
+      return dataSources.reviewsDb.getReviewsByListing(id);
     },
     // Exercise: Using requires/external
     moneyValueGuaranteed: (listing, _, { dataSources }) => {
-      // Use this function: dataSources.reviewsDb.calculateMoneyValueGuarantee(
-      //   listing.costPerNight,
-      //   listing.id
-      // )
+      return dataSources.reviewsDb.calculateMoneyValueGuarantee(
+        listing.costPerNight,
+        listing.id
+      );
     },
   },
   // Exercise: Reference an entity
   Review: {
-    listing: () => {
-      // Hint: Use the parent parameter
-      // Hint: What fields do you need to return an entity representation for a Listing?
+    listing: (review) => {
+      return { id: review.listingId };
     },
   },
 };
