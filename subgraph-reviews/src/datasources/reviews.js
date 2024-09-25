@@ -42,7 +42,11 @@ class ReviewsDB {
   }
 
   async getMostRecentReviews() {
-    return this.db.Review.findAll({ limit: 3 });
+    // hard-coded just for the workshop!
+    return this.db.Review.findAll({
+      where: { id: ["review-6", "review-7", "review-13"] },
+      limit: 3,
+    });
   }
 
   async getReviewsByListing(id) {
