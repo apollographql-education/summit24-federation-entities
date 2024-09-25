@@ -10,7 +10,7 @@ export const resolvers = {
     },
   },
   Listing: {
-    __resolveReference: (listing) => {
+    __resolveReference: (listing, { dataSources }) => {
       // listing is the the entity representation
       // uncomment the console log below to check what is in the representation
       // console.log(listing);
