@@ -10,6 +10,12 @@ export const resolvers = {
     },
   },
   Listing: {
+    __resolveReference: (listing) => {
+      // listing is the the entity representation
+      // uncomment the console log below to check what is in the representation
+      // console.log(listing);
+      return dataSources.listingAPI.getListing(listing.id);
+    },
     amenities: ({ id, amenities }, _, { dataSources }) => {
       return validateFullAmenities(amenities)
         ? amenities
