@@ -17,10 +17,10 @@ export const resolvers = {
     },
     // Exercise: Using requires/external
     moneyValueGuaranteed: (listing, _, { dataSources }) => {
-      // Use this function: dataSources.reviewsDb.calculateMoneyValueGuarantee(
-      //   listing.costPerNight,
-      //   listing.id
-      // )
+      return dataSources.reviewsDb.calculateMoneyValueGuarantee(
+        listing.costPerNight,
+        listing.id
+      );
     },
   },
   // Exercise: Reference an entity
