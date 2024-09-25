@@ -9,10 +9,10 @@ export const resolvers = {
     __resolveReference: () => {
       // Add the Listing reference resolver here
     },
-    overallRating: (_, __, { dataSources }) => {
+    overallRating: ({ id }, __, { dataSources }) => {
       // Use this function: dataSources.getOverallRatingForListing(listingId)
     },
-    reviews: (_, __, { dataSources }) => {
+    reviews: ({ id }, __, { dataSources }) => {
       // Use this function: dataSources.getReviewsByListing(listingId)
     },
   },
