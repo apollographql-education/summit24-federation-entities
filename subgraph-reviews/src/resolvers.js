@@ -15,19 +15,19 @@ export const resolvers = {
     reviews: ({ id }, __, { dataSources }) => {
       // Use this function: dataSources.getReviewsByListing(listingId)
     },
+    // Exercise: Using requires/external
+    moneyValueGuaranteed: (listing, _, { dataSources }) => {
+      // Use this function: dataSources.reviewsDb.calculateMoneyValueGuarantee(
+      //   listing.costPerNight,
+      //   listing.id
+      // )
+    },
   },
   // Exercise: Reference an entity
   Review: {
     listing: () => {
       // Hint: Use the parent parameter
       // Hint: What fields do you need to return an entity representation for a Listing?
-    },
-    // Exercise: Using Requires/external
-    moneyValueGuaranteed: (listing, _, { dataSources }) => {
-      // Use this function: dataSources.reviewsDb.calculateMoneyValueGuarantee(
-      //   listing.costPerNight,
-      //   listing.id
-      // )
     },
   },
 };
