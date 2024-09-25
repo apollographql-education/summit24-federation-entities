@@ -25,9 +25,8 @@ export const resolvers = {
   },
   // Exercise: Reference an entity
   Review: {
-    listing: () => {
-      // Hint: Use the parent parameter
-      // Hint: What fields do you need to return an entity representation for a Listing?
+    listing: (review) => {
+      return { id: review.listingId };
     },
   },
 };
